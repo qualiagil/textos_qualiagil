@@ -1,7 +1,5 @@
-all: tolatex topdf
-
-tolatex:
-	rst2latex integracao_continua.rst > integracao_continua.tex 
-
-topdf:
+latex:
+	pdflatex integracao_continua.tex
+	bibtex integracao_continua
+	pdflatex integracao_continua.tex
 	pdflatex integracao_continua.tex
