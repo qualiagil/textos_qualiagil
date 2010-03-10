@@ -1,0 +1,65 @@
+@Book{XPExplained,
+    author = {Kent Beck and Cynthia Andres},
+    title = {Extreme Programming Explained: Embrace Changes},
+    publisher = {Addison-Wesley},
+    year = {2004},
+    edition = {2nd},
+    }
+
+@Book{BecomingAgile,
+  author = {Greg Smith and Ahmed Sidky},
+  title = {Becoming Agile},
+  publisher = {Wanning},
+  year = {2009},
+}
+
+@Misc{Chaos2009,
+  title = {New Standish Group report shows more project failing and less successful projects},
+  author = {Standish Group},
+  year = {2009},
+  howpublished = {Disponível em http://standishgroup.com/newsroom/chaos_2009.php, acesso em 25/02/2010},
+}
+
+@Misc{EscopoNegociavel,
+  title = {Contrato de Escopo Negociável},
+  author = {Vinícius Teles},
+  year = {2007},
+  howpublished = {Disponível em http://www.improveit.com.br/xp/praticas/contrato, acesso em 03/03/2010},
+}
+
+@Misc{Tiobe,
+  title = {TIOBE Programming Community Index for February 2010},
+  author = {Tio Be},
+  year = {2010},
+  howpublished = {Disponível em http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html, acesso em 25/02/2010},
+}
+
+@Misc{EmpresasAgeis,
+  title = {Empresas Brasileiras Que Utilizam Métodos Ágeis},
+  author = {Agil Coop},
+  year = {2010},
+  howpublished = {Disponível em http://agilcoop.incubadora.fapesp.br/portal/sucessos, acesso em 25/02/2010},
+}
+
+@Misc{AgileManifesto,
+  title = {Agile Manifesto},
+  author = {Kent Beck and Martin Fowler and Alistair Cockburn and Ken Schwaber and Erich Gamma},
+  year = {2001},
+  howpublished = {Disponível em http://agilemanifesto.org/, acesso em 25/02/2010},
+}
+
+@Misc{PrincipiosAgeis,
+  title = {Lendo Os Princípios Ágeis},
+  author = {Fábio Akita},
+  year = {2010},
+  howpublished = {Disponível em http://akitaonrails.com/2010/01/30/off-topic-lendo-os-principios-ageis, acesso em 25/02/2010},
+}
+
+@Misc{Dicionario,
+  title = {Michaelis On Line},
+  author = {Michaelis},
+  year = {2010},
+  howpublished = {Disponível em http://michaelis.com.br, acesso em 23/02/2010},
+}
+
+
