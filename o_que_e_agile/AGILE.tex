@@ -1,18 +1,3 @@
-\begin{comment}
-
-Notas de aprendizado: 
-% Em tipografia, use dois ` (acento grave) para abrir aspas e dois ' (apóstrofe) para fechar. 
-% CITAÇÃO: \citeonline e \cite
-
-SUGESTÃO:
-poderia, talvez, "enfatizar mais" (pleonasmo!) que a grande mudança entre agile e "tradicional" são os 4 valores do manifesto, e que as práticas recomendadas são o meio mais adequado e seguro de atingi-las.
-
-SEI LÁ, ACHO QUE JÁ ESTÁ 'BEM ENFATIZADO'.... Agora eu acrescentei umas paradas no texto, acho que vai ficar pleonasmado msm! rs, não sei onde colocar de novo... 
-
-}
-
-\end{comment}
-
 \documentclass[10pt,a4paper,font=plain]{abnt}
 \usepackage[utf8x]{inputenc} %acentuaçao
 \usepackage[alf]{abntcite} 
@@ -24,19 +9,19 @@ SEI LÁ, ACHO QUE JÁ ESTÁ 'BEM ENFATIZADO'.... Agora eu acrescentei umas parad
 
 Por se tratar de um processo complexo, que envolve criatividade e muito influenciado também pela cultura de cada equipe, o desenvolvimento de software acaba estando fadado a enfrentar diversas dificuldades, principalmente relacionadas à estipulação de custos e prazos. Assim, para o sucesso de um projeto de software, a determinação da metodologia e, por conseguinte, do método mais adequados a equipe é um ponto essencial.
 
-A mais recente pesquisa realizada pelo Standish Group \citeonline{Chaos2009}, mostra que somente cerca de 32\% dos projetos respeitaram prazos, custos e todas as funcionalidades especificadas em sua entrega, cerca de 24\% foram cancelados antes de seu fim e 44\% necessitaram de prazos maiores, custos maiores ou menos funcionalidades do que especificado no início do projeto para serem entregues, sendo considerados dessa maneira, projetos prejudicados. Confrontadas com essa realidade, as equipes vem buscando (ou pelo menos, deveriam estar buscando) novas formas de gerenciamento e organização para trazer maior sucesso aos projetos.
+A mais recente pesquisa realizada pelo Standish Group [\citeonline{Chaos2009}], mostra que somente cerca de 32\% dos projetos respeitaram prazos, custos e todas as funcionalidades especificadas em sua entrega, cerca de 24\% foram cancelados antes de seu fim e 44\% necessitaram de prazos maiores, custos maiores ou menos funcionalidades do que especificado no início do projeto para serem entregues, sendo considerados dessa maneira, projetos prejudicados. Confrontadas com essa realidade, as equipes vem buscando (ou pelo menos, deveriam estar buscando) novas formas de gerenciamento e organização para trazer maior sucesso aos projetos.
 
 Uma vertente que surgiu nesse movimento de busca de mudanças foi a metodologia ágil (conhecida pelo termo em inglês \textit{agile}) que, assim como a metodologia tradicional \footnote{leia-se por metodologia tradicional, o conjunto de métodos e práticas de desenvolvimento de software baseados nas fases da engenharia tradicional \cite{Pressman}, com foco no processo. Tais como: cascata \cite{Cascata}, EUP/RUP \cite{EUP}, protipação \cite{Prototipacao}, Catalysis \cite{Catalysis} ...}, têm como objetivo reger da forma mais eficiente projetos de desenvolvimento de software, porém os métodos existentes sugerem práticas muito diferentes para atingir esse fim.
 
-Nas duas últimas décadas, o mercado de software vem aceitando, entendendo e aplicando a metodologia ágil como uma alternativa \citeonline{XPExplained}, essa aceitação tem sido apoiada e incentivada pelo avanço das tecnologias, uma vez que a maioria das linguagens utilizadas atualmente permite que se apliquem novas técnicas de comprovada eficiência para garantir a qualidade de software. Dentre as técnicas essenciais pregadas pelo movimento ágil, estão: iterações curtas, execução de testes antes de escrita de código e integração contínua.
+Nas duas últimas décadas, o mercado de software vem aceitando, entendendo e aplicando a metodologia ágil como uma alternativa [\citeonline{XPExplained}], essa aceitação tem sido apoiada e incentivada pelo avanço das tecnologias, uma vez que a maioria das linguagens utilizadas atualmente permite que se apliquem novas técnicas de comprovada eficiência para garantir a qualidade de software. Dentre as técnicas essenciais pregadas pelo movimento ágil, estão: iterações curtas, execução de testes antes de escrita de código e integração contínua.
 
-Há muitos contrastes em relação a como é visto todo o processo de desenvolvimento do software pelas metodologias ágil e tradicional. A própria idéia de que um projeto com menos funcionalidades que o definido inicialmente seria considerado um projeto prejudicado, como considera a pesquisa \citeonline{Chaos2009}, é desacreditada pela metodologia ágil. Segundo \citeonline{Cohn}, uma vez que a metodologia ágil prega o contrato de escopo negociável \citeonline{EscopoNegociavel}, definindo metas a prazos curtos, sendo estas revistas ao longo do projeto por equipe e cliente, essa teoria de revisitar o escopo inicial para determinar o sucesso do projeto não seria adequada para um projeto ágil. As diferenças ideológicas, e consequentemente, práticas, serão vistas com mais detalhes na próxima sessão.
+Há muitos contrastes em relação a como é visto todo o processo de desenvolvimento do software pelas metodologias ágil e tradicional. A própria idéia de que um projeto com menos funcionalidades que o definido inicialmente seria considerado um projeto prejudicado, como considera a pesquisa [\citeonline{Chaos2009}] é desacreditada pela metodologia ágil. Segundo \citeonline{Cohn}, uma vez que a metodologia ágil prega o contrato de escopo negociável [\citeonline{EscopoNegociavel}], definindo metas a prazos curtos, sendo estas revistas ao longo do projeto por equipe e cliente, essa teoria de revisitar o escopo inicial para determinar o sucesso do projeto não seria adequada para um projeto ágil. As diferenças ideológicas, e consequentemente, práticas, serão vistas com mais detalhes na próxima sessão.
 
 O perfil e a cultura da equipe devem ser avaliados ao definir se um método ágil é mais ou menos adequado para ela. Também o tamanho da equipe deve ser levado em conta. Para decidir com mais clareza o que mais se adapta a equipe e o que trará maior qualidade e eficiência ao processo e consequentemente ao produto final, é importante conhecer bem as vertentes existentes. Esse texto vem introduzir conceitos importantes da metodologia ágil, suas práticas, valores e príncipios e também sugerir práticas e ferramentas para tornar possível a implementação nas equipes, de forma prática. Ele faz parte de um conjunto de materiais, dentre eles textos, exemplos de código e screencasts com esse mesmo objetivo.
 
 \section {O que é \textit{agile}?}
 
-As diretrizes e princípios da metodologia ágil estão descritos num documento, que foi escrito em fevereiro de 2001 por um grupo de especialistas da área, conhecido como manifesto ágil \citeonline{AgileManifesto}. A partir desse documento e seguindo suas indicações, foram criados os métodos ágeis de desenvolvimento de software, que tem valores e princípios comuns, apesar de utilizarem práticas diferentes.
+As diretrizes e princípios da metodologia ágil estão descritos num documento, que foi escrito em fevereiro de 2001 por um grupo de especialistas da área, conhecido como manifesto ágil [\citeonline{AgileManifesto}]. A partir desse documento e seguindo suas indicações, foram criados os métodos ágeis de desenvolvimento de software, que tem valores e princípios comuns, apesar de utilizarem práticas diferentes.
 
 Esse documento estabelece 4 valores fundamentais da metodologia ágil, que redefinem a maneira como deve ser entendido o processo de construção de software, contrastando com os valores da metodologia tradicional:
 
@@ -78,18 +63,18 @@ No mesmo documento, foram definidos alguns princípios da metodologia ágil:
 \end{enumerate}
 
 
-É um erro tentar executar num projeto apenas um ou alguns desses valores e princípios, quando na verdade, a junção das idéias trazidas pelos mesmos é que vai propiciar o sucesso. Optar por utilizá-los em separado pode acabar se tornando uma ponte para o fracasso. \citeonline{PrincipiosAgeis}.
+É um erro tentar executar num projeto apenas um ou alguns desses valores e princípios, quando na verdade, a junção das idéias trazidas pelos mesmos é que vai propiciar o sucesso. Optar por utilizá-los em separado pode acabar se tornando uma ponte para o fracasso. [\citeonline{PrincipiosAgeis}].
 
 \begin{center}\textit{``as práticas técnicas trazidas pelos métodos ágeis - iterações curtas, desenvolver testes antes de código, integração contínua - não são opcionais. Assuma os riscos de ignorá-las ou deixá-las para mais tarde.''} \citeonline{BecomingAgile} \end{center}
 
-A junção dos príncipios e valores ágeis levaram ao desenvolvimento dos métodos ágeis, que são um conjunto de técnicas para o desenvolvimento de software, criadas pelos mesmos autores do manifesto que originou a metodologia. Assim,  os métodos se diferenciam nas práticas, mas partilham dos mesmos valores e princípios. São elas: XP \cite{XPExplained}, DSDM \cite{DSDM}, Família Crystal{Crystal}, ASD \cite{ASD}, SCRUM \cite {ScrumXP}, FDD \citeonline{FDD}. Também o modelo Lean \cite{Lean} partilha dos valores ágeis para o desenvolvimento de software.
+A junção dos príncipios e valores ágeis levaram ao desenvolvimento dos métodos ágeis, que são um conjunto de técnicas para o desenvolvimento de software, criadas pelos mesmos autores do manifesto que originou a metodologia. Assim,  os métodos se diferenciam nas práticas, mas partilham dos mesmos valores e princípios. São elas: XP \cite{XPExplained}, DSDM \cite{DSDM}, Família Crystal \cite{Crystal}, ASD \cite{ASD}, SCRUM \cite{ScrumXP}, FDD \citeonline{FDD}. Também o modelo Lean \cite{Lean} partilha dos valores ágeis para o desenvolvimento de software.
 
 As práticas essenciais dos métodos ágeis podem ser definidas em:
 \begin{itemize}
 
 \item Comunicação direta com o cliente inicialmente, para definição de requisitos e planejamento das iterações. O cliente faz a priorização de requisitos e a equipe tenta atender e desenvolver sempre primeiramente o que tem mais valor para ele. 
 
-\item Contratos de escopo negociável \citeonline{EscopoNegociavel}, prazos e metas definidos em prazos curtos, para que não haja 'chutes' e demora exagerada na entrega, além de permitir que o cliente verifique os resultados e possa decidir sobre a continuação ou não do projeto após a entrega de cada release a prazos combinado. Objetiva também aumentar o comprometimento da equipe com o resultado esperado.
+\item Contratos de escopo negociável [\citeonline{EscopoNegociavel}], prazos e metas definidos em prazos curtos, para que não haja 'chutes' e demora exagerada na entrega, além de permitir que o cliente verifique os resultados e possa decidir sobre a continuação ou não do projeto após a entrega de cada release a prazos combinado. Objetiva também aumentar o comprometimento da equipe com o resultado esperado.
 
 \item Cada iteração é planejada a prazos curtos, de forma que ao fim haja um conjunto de material considerado 'pronto'. O planejamento é feito respeitando o valor e a complexidade do que foi requerido pelo cliente.
 
@@ -106,7 +91,7 @@ As práticas essenciais dos métodos ágeis podem ser definidas em:
 
 Além de práticas técnicas, existe a necessidade de mudança na maneira de pensar sobre desenvolvimento e organização das equipes envolvida na adoção de algum dos métodos da metodologia ágil. As vantagens macro são que o projeto se torna mais adaptável a mudança, as pessoas ficam mais integradas, os prazos são respeitados com mais rigidez, produto de valor para o cliente é entregue com frequência, a qualidade do código em si tende a aumentar, pois são considerados valores de design e devido aos testes automatizados. 
 
-Existem algumas variantes importantes entre os métodos ágeis e elas podem ser vistas em detalhes em livros como os já citados \cite{XPExplained}, \cite{DSDM}, {Crystal}, \cite{ASD}, \cite {ScrumXP}, \citeonline{FDD} e \cite{Lean}. Este texto faz parte de um conjunto de textos que tratarão das técnicas utilizadas dentro do método XP, porém a idéia é que as práticas sejam conhecidas e suas vantagens visualidas, para posteriormente as mesmas serem encaixadas dentro de um dos métodos existentes, na concepção de uma variante que leve em conta as especificidades da equipe.
+Existem algumas variantes importantes entre os métodos ágeis e elas podem ser vistas em detalhes em livros como os já citados \cite{XPExplained}, \cite{DSDM}, \cite{Crystal}, \cite{ASD}, \cite {ScrumXP}, \citeonline{FDD} e \cite{Lean}. Este texto faz parte de um conjunto de textos que tratarão das técnicas utilizadas dentro do método XP, porém a idéia é que as práticas sejam conhecidas e suas vantagens visualidas, para posteriormente as mesmas serem encaixadas dentro de um dos métodos existentes, na concepção de uma variante que leve em conta as especificidades da equipe.
 
 \section {O que não é \textit{agile}}
 
@@ -128,6 +113,19 @@ O desafio não é o de tornar o processo rápido e simples, mas sim, procurar co
 \end{document}
 
 \begin{comment}
+
+Notas de aprendizado: 
+
+Em tipografia, use dois ` (acento grave) para abrir aspas e dois ' (apóstrofe) para fechar. 
+
+CITAÇÃO: \citeonline e \cite
+
+SUGESTÃO:
+poderia, talvez, "enfatizar mais" (pleonasmo!) que a grande mudança entre agile e "tradicional" são os 4 valores do manifesto, e que as práticas recomendadas são o meio mais adequado e seguro de atingi-las.
+
+SEI LÁ, ACHO QUE JÁ ESTÁ 'BEM ENFATIZADO'.... Agora eu acrescentei umas paradas no texto, acho que vai ficar pleonasmado msm! rs, não sei onde colocar de novo... 
+
+
 PRIMEIRO DE TUDO, DEFINI ASSIM:
 
 Metodologia (Estudo científico dos métodos) ágil  => a metodologia: manifesto e princípios
