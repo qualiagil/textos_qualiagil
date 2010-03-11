@@ -9,13 +9,13 @@
 \small Instituto Federal Fluminense\\
 \small \texttt{htavares@iff.edu.br}\\
 }
-\date{04 de março de 2010}
+\date{11 de março de 2010}
 
 \begin{document}
 \maketitle
 
 \begin{resumo}
-Com a ascensão de metodologias ágeis, entre elas principalmente Extreme Programming, várias práticas de desenvolvimento de software foram amplamente disseminadas e se provaram eficientes. Dentre tais técnicas estão Desenvolvimento Guiado por Testes \textit{(Test-Driven Development)}  e Integração Contínua, técnicas estas que se completam. Este trabalho abordará alguns conceitos relacionados a integração contínua e apresentará formas de aplicá-la no dia-a-dia de uma equipe, usando uma abordagem automatizada.\\
+Com a ascensão de métodos ágeis e principalmente Extreme Programming, várias práticas de desenvolvimento de software foram amplamente disseminadas e provaram ser eficientes. Dentre tais técnicas estão Desenvolvimento Guiado por Testes \textit{(Test-Driven Development)}  e Integração Contínua, técnicas estas que se completam. Este trabalho abordará alguns conceitos relacionados à integração contínua e apresentará maneiras de aplicá-la no dia-a-dia de uma equipe, usando uma abordagem automatizada.\\
 
 Palavras-chave: Ágil, Integração Contínua, Sistema de Controle de Versão, Test-Driven Development, Refactoring, Extreme Programming
 \end{resumo}
@@ -24,42 +24,48 @@ Palavras-chave: Ágil, Integração Contínua, Sistema de Controle de Versão, T
 
 \section{Introdução}
 
-Segundo \citeonline{CI}, o problema de integrar software não é um problema novo, e a medida que a complexidade de um projeto aumenta a necessidade de integrar códigos de diferentes membros de uma equipe cresce. \citeonline{CI} diz que um dos pontos de maior risco no ciclo de desenvolvimento de software é a integração de modificações independentes feitas por diferentes membros de uma equipe.
+O problema de integrar software não é novo, e à medida que a complexidade de um projeto aumenta a necessidade de integrar códigos de diferentes membros de uma equipe cresce. \citeonline{CI} diz que um dos pontos de maior risco no ciclo de desenvolvimento de software é a integração de modificações independentes feitas por diferentes membros de uma equipe.
 
-\citeonline{CI} salienta que esperar até o fim do projeto pra fazer integração leva a todo tipo de problemas de qualidade, que são custosos e na maioria das vezes trazem atrasos para o projeto. Porém, quando a integração é feita continuamente os riscos são abordados mais rapidamente e em pequenos incrementos antes de ir pra produção. Assim, caso ocorra algum problema, a equipe será alertada rapidamente.
+\citeonline{CI} salienta que esperar até o fim do projeto pra fazer integração leva a todo tipo de problemas de qualidade, que são custosos e na maioria das vezes trazem atrasos para o projeto. Porém, quando a integração é feita continuamente, os riscos são abordados mais rapidamente e em pequenos incrementos antes de ir pra produção. Assim, caso ocorra algum problema, a equipe será alertada rapidamente.
 
 
 
 \section{Definição de Integração Contínua}
 
 Como o próprio nome já diz, integração contínua significa integrar frequentemente mudanças feitas durante o desenvolvimento de software.
-\citeonline{Fowler} define integração contínua da seguinte maneira: "uma prática de desenvolvimento de software onde membros de uma equipe integram seu trabalho frequentemente, normalmente cada pessoa integra pelo menos diariamente" - levando a múltiplas integrações por dia. Cada integração é verificada por um \textit{build} (incluindo teste) para detecar erros de integração o mais rápido possível. \citeonline{Fowler} também relata que muitas equipes acham que essa abordagem leva a significantes quedas de problemas relacionados a integração e permite que uma equipe desenvolva software coeso mais rapidamente.
+\citeonline{Fowler} define integração contínua da seguinte maneira: ``uma prática de desenvolvimento de software onde membros de uma equipe integram seu trabalho frequentemente, normalmente cada pessoa integra pelo menos diariamente'' -- levando a múltiplas integrações por dia. Cada integração é verificada por um \textit{build} (incluindo teste) para detecar erros de integração o mais rápido possível. Muitas equipes acham que essa abordagem leva a significantes quedas de problemas relacionados a integração e permite que uma equipe desenvolva software coeso mais rapidamente \cite{Fowler}.
+
+
+
+\section{Funcionalidades Integradas Incrementalmente}
+
+Em cada vez que a equipe integra códiga não haverá uma funcionalidade inteira sendo integrada, mas pequenas partes que resolvam os cenários atuais. O necessário para que seja feita uma integração é que todos os testes unitários passem e todas os testes de aceitação (ou especificações de aceitação) já escritos, passem também. Porém, nem sempre os testes de aceitação estão completos. Assim, a integração deve ser feita de forma contínua, com os testes de aceitação sendo  incrementados continuamente até que toda a história (\textit{user story}) esteja completa. Esse ciclo se baseia na idéia de \textit{Baby Steps} (passos de bebê), onde os testes e códigos são escritos em pequenos lotes até que seja implementada a história inteira \cite{BabySteps}. A idéia de Baby Steps é baseada na idéia de desenvolvimento iterativo e incremental, pregado pelos métodos ágeis \cite{XP.org}.
 
 
 
 \section{Pré-requisitos para Fazer Integração Contínua}
 
-\citeonline{Fowler} identifica que integração contínua é simplesmente o processo de integrar código frequentemente - não necessariamente usando um processo automatizado. Porém, como \citeonline{CI} discute, os aspectos automatizados de um processo de integração contínua, que segundo o mesmo trazem muito mais benefícios.
+\citeonline{Fowler} identifica que integração contínua é simplesmente o processo de integrar código frequentemente -- não necessariamente usando um processo automatizado. Porém, como \citeonline{CI} discute, os aspectos automatizados de um processo de integração contínua, que segundo o mesmo trazem muito mais benefícios.
 Porém, uma integração contínua não é possível mesmo quando todo o suporte ferramental existe se a equipe não integrar frequentemente código ao repositório de códigos. Assim, antes de mais nada é necessário que a equipe proponha-se a integrar modificações várias vezes ao dia código que funciona, ou seja, código que satisfaz as necessidades e passa em todos os testes.
 
 
 \subsection{Repositório de Código}
 
-Em qualquer equipe de desenvolvimento é imprescindível o uso de um repositório de códigos e um sistema de controle de versões cuida bem dessa parte - tais como CVS, Subversion, Git, etc - pois além de manter um histórico das alterações do repositório também possibilita baixar versões diferentes dos arquivos.
+Em qualquer equipe de desenvolvimento é imprescindível o uso de um repositório de códigos e um sistema de controle de versões que cuide bem dessa parte -- tais como CVS, Subversion, Git, etc -- pois além de manter um histórico das alterações do repositório também possibilita baixar versões diferentes dos arquivos.
 
 \subsection{Conjunto Sólido de Testes}
 
-Uma peça fundamental dentro do desenvolvimento ágil de software são práticas de técnicas como Test-Driven Development \cite{TDD} e Behaviour-Driven Development \cite{BDD}. Usando tais práticas é possível criar um conjunto sólido de conjuntos de testes que tornem possível validar o estado do software frequentemente. É possível identificar problemas de forma automatizada, trazendo benefícios futuros ao projeto, tais como redução no custo da validação do software.
+Uma peça fundamental dentro do desenvolvimento ágil de software são práticas de técnicas como Test-Driven Development \cite{TDD} e Behaviour-Driven Development \cite{BDD}. Usando tais práticas, é possível criar um conjunto sólido de testes que torna possível validar o estado do software frequentemente. Assim, identificar problemas de forma automatizada facilita o processo, trazendo benefícios futuros ao projeto, tais como redução no custo da validação do software.
 
 
 \subsection{Build Automatizado}
 
-Um \textit{script de build} automatizado desempenha um papel importantíssimo no ciclo de vida de um projeto, pois com ele é possível que todos consigam instalar o projeto e rodar todos os testes em diferentes máquinas. Usar um script de build significa ter um \textit{script} que cuida de baixar e instalar dependências, compilar códigos-fontes e é responsável por rodar os testes e até mesmo rodar ferramentas de cobertura de teste, notificando caso ocorra erros ou falhas no procedimento.
+Um \textit{script de build} automatizado desempenha um papel importantíssimo no ciclo de vida de um projeto, pois, com ele, é possível que todos consigam instalar o projeto e rodar todos os testes em diferentes máquinas. Este build automatizado é executado através de um script de build. Isso significa ter um \textit{script} que cuida de baixar e instalar dependências, compilar códigos-fontes e é responsável por rodar os testes e até mesmo ferramentas de cobertura de teste, notificando a equipe caso ocorra erros ou falhas no procedimento.
 
 
 \subsection{O Ambiente de Produção Deve Ser Clonado}
 
-Como descrito por \citeonline{Fowler} os testes devem ser executados numa máquina que possua um ambiente idêntico ao do ambiente de produção. O ponto principal é que usando o mesmo ambiente é possível evitar problemas antes do software ir pra produção. Tanto problemas relacionados a versões de dependências quanto a sistemas operacionais. Essa prática se mostra eficiente pois a equipe não tem surpresas na hora de implantar o sistema no ambiente de produção, pois o ambiente é idêntico ao ambiente em que o software foi desenvolvido e testado.
+Como descrito em \cite{Fowler} os testes devem ser executados numa máquina que possua um ambiente idêntico ao do ambiente de produção. O ponto principal é usar o mesmo ambiente, para que seja possível evitar problemas antes do software ir pra produção. Tanto problemas relacionados a versões de dependências quanto a sistemas operacionais. Essa prática se mostra eficiente, pois a equipe não tem surpresas na hora de implantar o sistema no ambiente de produção, pois o ambiente (este) é idêntico ao ambiente em que o software foi desenvolvido e testado.
 
 
 \subsection{Resumo das Práticas}
@@ -72,27 +78,28 @@ Usando todas as práticas citadas anteriormente é possível: compartilhar e ver
 
 Segundo \citeonline{XP} há dois modelos de integração contínua: síncrono e assíncrono.
 No modelo síncrono o \textit{build} é executado na máquina de integração pela equipe assim que um conjunto de alterações está pronto pra ir pro repositório de código. As alterações são baixadas pra máquina, o build é executado e caso seja executado com sucesso, passando em todos os testes e com cobertura de testes satisfatória (caso cobertura seja importante pra equipe), enviado ao repositório de código.
-O modelo assíncrono é mais comum, segundo \citeonline{XP}. Nesse modelo os conjuntos de alterações feitas pela equipe são enviados ao repositório de código e uma máquina - chamada máquina de integração - é responsável por executar o \textit{build} sempre que novas alterações forem identificadas no repositório. Esta mesma máquina é responsável por notificar a equipe se ocorreu algum problema como erros, falhas ou cobertura insatisfatória dos testes - seja por e-mail, mensagem de texto, IRC ou qualquer outro meio de comunicação. \citeonline{Fowler} usa os termos build manual e servidor de integração referindo-se respectivamente a integração síncrona e assíncrona.
+O modelo assíncrono é mais comum, segundo \citeonline{XP}. Nesse modelo os conjuntos de alterações feitas pela equipe são enviados ao repositório de código e uma máquina -- chamada máquina de integração -- é responsável por executar o \textit{build} sempre que novas alterações forem identificadas no repositório. Esta mesma máquina é responsável por notificar a equipe se ocorreu algum problema como erros, falhas ou cobertura insatisfatória dos testes -- seja por e-mail, mensagem de texto, IRC ou qualquer outro meio de comunicação. \citeonline{Fowler} usa os termos build manual e servidor de integração referindo-se respectivamente a integração síncrona e assíncrona.
 
-\citeonline{Teles} diz que um problema no modelo síncrono é que ele funciona melhor quando a equipe inteira está num mesmo local, pois estabelece-se um acordo sobre a vez de integrar e evita-se que o repositório de código fique com código inconsistente em qualquer momento.
-O modelo assíncrono, como descrito por \citeonline{Teles}, é recomendado pra projetos onde a equipe está distribuída, ou seja, não estão todos no mesmo local físico. \citeonline{Teles} identifica esta abordagem como ideal para projetos de software livre e open source, projetos estes que na maioria das vezes a equipe está espalhada geograficamente.
+\citeonline{Teles} diz que um problema no modelo síncrono é que ele funciona melhor quando a equipe inteira está num mesmo local, pois estabelece-se um acordo sobre a vez de integrar e evita-se que o repositório de código fique com código inconsistente em qualquer momento. Uma das vantagens deste modelo é que a cada integração os desenvolvedores tem que esperar o build ser executado, fazendo com que eles vejam se o tempo de build está aceitável ou não -- isso não acontece no assíncrono, pois os desenvolvedores não são obrigados a esperar o build ser executado.
+O modelo assíncrono é recomendado pra projetos onde a equipe está distribuída, ou seja, não estão todos no mesmo local físico \cite{Teles}. \citeonline{Teles} identifica esta abordagem como ideal para projetos de software livre e open source, projetos estes que na maioria das vezes a equipe está espalhada geograficamente.
 Comparando os dois modelos de integração contínua \citeonline{Teles} diz usar o modelo síncrono na empresa ImproveIt e diz que o modelo assíncrono é mais arriscado, pois há o risco de em algum determinado momento deixar o repositório de códigos com inconsistências durante algum tempo, pois a equipe nem sempre resolve em tempo hábil o problema, mesmo sendo alertada rapidamente, e pode ser que nesse meio tempo alguém use código inconsistente.
 Em ambos modelos podem haver uma máquina real ou virtual dedicada a integração das alterações.
 
-No modelo de integração contínua de \citeonline{CI} há sempre um servidor de integração contínua responsável por observar as alterações no repositório de códigos, e sempre que acontecer alguma alteração o servidor executará o build e notificará a equipe caso haja inconsistências, da mesma maneira como descrita no processo assíncrono de \citeonline{XP}. \citeonline{CI} deixa claro que o uso de uma máquina dedicada a integração de software é fundamental para um bom processo de integração contínua, não falando hora nenhuma sobre mais de um modelo de integração como os descritos por \citeonline{XP} ou \citeonline{Fowler}.
+No modelo de integração contínua descrito em \cite{CI} há sempre um servidor de integração responsável por observar as alterações no repositório de códigos, e sempre que acontecer alguma alteração o servidor executará o build e notificará a equipe caso haja inconsistências, da mesma maneira como descrita no processo assíncrono de \citeonline{XP}, citado anteriormente. Fica claro em \cite{CI} que o uso de uma máquina dedicada a integração de software é fundamental para um bom processo de integração contínua, não falando hora nenhuma sobre mais de um modelo de integração como os descritos por \citeonline{XP} ou \citeonline{Fowler}.
 
-Uma das vantagens de possuir servidores de integração contínua que monitoram o repositório de código é poder ter builds executados em diferentes sistemas operacionais e até mesmo arquiteturas, evitando, assim, o problema do desenvolvedor dizer "mas na minha máquina funciona", como descrito em \citeonline{Kniberg}.
+Uma das vantagens de possuir servidores de integração contínua que monitoram o repositório de código, é poder ter builds executados em diferentes sistemas operacionais e até mesmo arquiteturas, evitando, assim, o problema do desenvolvedor dizer ``mas na minha máquina funciona'', como descrito em \cite{Kniberg}.
 
 \section{Ferramentas}
 
-Atualmente há várias ferramentas disponíveis para esta tarefa. Entre as mais famosas estão CruiseControl.rb\footnote{http://cruisecontrolrb.thoughtworks.com/ acesso em 04 de março de 2010}, Hudson\footnote{http://hudson-ci.org/ acesso em 04 de março de 2010} e BuildBot\footnote{http://buildbot.net/trac acesso em 04 de março de 2010} - todas ferramentas open-source. Porém, ferramentas mais simples, tais como Make\footnote{http://www.gnu.org/software/make/ acesso em 04 de março de 2010}, Rake\footnote{ http://rake.rubyforge.org/ acesso em 04 de março de 2010}, Ant\footnote{http://ant.apache.org/ acesso em 04 de março de 2010} e Maven\footnote{http://maven.apache.org/ acesso em 04 de março de 2010} e Buildout\footnote{http://www.buildout.org acesso em 04 de março de 2010} podem ser usadas pra criar builds de forma simples. A diferença das últimas ferramentas em comparação com as primeiras é que essas são mais completas, podendo até mesmo cuidar de envio de e-mails, agendar builds e até comandar diferentes máquinas para executarem builds.
+Atualmente há várias ferramentas disponíveis para esta tarefa. Entre as mais famosas estão CruiseControl.rb\footnote{http://cruisecontrolrb.thoughtworks.com/ acesso em 04 de março de 2010}, Hudson\footnote{http://hudson-ci.org/ acesso em 04 de março de 2010} e BuildBot\footnote{http://buildbot.net/trac acesso em 04 de março de 2010} -- todas ferramentas open-source. Porém, ferramentas mais simples, tais como Make\footnote{http://www.gnu.org/software/make/ acesso em 04 de março de 2010}, Rake\footnote{ http://rake.rubyforge.org/ acesso em 04 de março de 2010}, Ant\footnote{http://ant.apache.org/ acesso em 04 de março de 2010} e Maven\footnote{http://maven.apache.org/ acesso em 04 de março de 2010} e Buildout\footnote{http://www.buildout.org acesso em 04 de março de 2010} podem ser usadas pra criar builds de forma simples. A diferença das últimas ferramentas em comparação com as primeiras é que essas são mais completas, podendo até mesmo cuidar de envio de e-mails, agendar builds e até comandar diferentes máquinas para executarem builds.
 
 \section{Conclusão}
 
-A prática de usar integração contínua se mostra muito eficaz nas equipes de desenvolvimento e está sendo usada amplamente. Inúmeros projetos open-source usam várias máquinas dedicadas a serem servidores de integração, rodando em muitas vezes sistemas operacionais diferentes ou diferentes versões de softwares, disponibilizando sempre um relatório para a equipe. Em equipes onde há distância geográfica recomenda-se o uso de integração contínua assíncrona e em equipes que trabalham no mesmo espaço físico recomenda-se o uso de integração contínua síncrona. Em ambos casos é importante ter pelo menos uma máquina dedicada a integração que seja um clone do ambiente de produção, pois o quanto mais rápido for o \textit{feedback} em um projeto, melhor.
+A prática de usar integração contínua se mostra muito eficaz nas equipes de desenvolvimento e está sendo usada amplamente. Inúmeros projetos open-source usam várias máquinas dedicadas a serem servidores de integração, rodando muitas vezes em sistemas operacionais diferentes ou diferentes versões de softwares, disponibilizando sempre um relatório para a equipe. Em equipes onde há distância geográfica recomenda-se o uso de integração contínua assíncrona e em equipes que trabalham no mesmo espaço físico recomenda-se o uso de integração contínua síncrona. Em ambos casos é importante ter pelo menos uma máquina dedicada a integração que seja um clone do ambiente de produção, pois o quanto mais rápido for o \textit{feedback} em um projeto, melhor.
 
 Em suma, integração contínua resume-se em ter \textit{feedback} rápido e assegura que sempre existirá um software pronto pra ser colocado em produção (obviamente não está com todos os recursos, mas deverá sempre ser usável). \citeonline{XP} definem \textit{feedback} como um dos valores mais importantes no método \textit{Extreme Programming} \cite{XP}.
 \bibliographystyle{abnt-alf}
 \bibliography{referencias}
 
 \end{document}
+
