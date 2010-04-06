@@ -5,4 +5,4 @@
 *.toc
 *.pdf
 *.dvi
-*.fbd_latexmk
+*.fdb_latexmk
