@@ -4,13 +4,21 @@
 \usepackage{graphicx}
 \usepackage[alf]{abntcite}
 
-\begin{document}
+\titulo{Behaviour-Driven Development}
+\autor{Rodrigo Soares Manhães\\
+\small Instituto Federal Fluminense\\
+\small \texttt{rmanhaes@iff.edu.br}\\
+}
+\date{12 de março de 2010}
 
-\chapter{Behaviour-Driven Development}
+\begin{document}
+\maketitle
+
+\chapter*{Behaviour-Driven Development}
 
 Behaviour-Driven Development (BDD) é uma técnica de desenvolvimento de software cuja amplitude se estende às atividades de levantamento de requisitos, \textit{design}, documentação e verificação e validação, tratando-as de modo unificado, disciplinado e com foco em qualidade e em entrega rápida de software de valor. BDD encoraja e fornece um ambiente propício à colaboração entre desenvolvedores, setores de qualidade e pessoal de negócios em um projeto de software. BDD foi concebida inicialmente por \citeonline{IntroBDD}, tendo recebido um grande número de contribuições de praticantes ao redor do mundo, principalmente de textos publicados em blogs\footnote{Uma lista com um bom número destes artigos de blogs se encontra no anexo 1.}. \citeonline{RSpecBook} detalham a técnica no contexto de ferramentas BDD para a linguagem Ruby\footnote{http://ruby-lang.org, acesso em 26/02/2009.}, sendo provavelmente o maior conjunto de informações sobre BDD disponível atualmente em uma mesma fonte.
 
-\section{O ciclo \textit{outside-in}}
+\section*{O ciclo \textit{outside-in}}
 
 Quando se usa BDD, as atividades necessárias ao desenvolvimento de uma funcionalidade são realizadas segundo  um ciclo denominado \textit{outside-in}. O ciclo recebe este nome devido à sequência que deve ser percorrida, que se inicia dos requisitos e da visão do cliente (\textit{outside}) até as entranhas dos artefatos de software (\textit{in}). Este ciclo pode ser explicado em uma série de passos, adaptados de \citeonline{RSpecBook} e comentados:
 
@@ -39,7 +47,7 @@ Este novo passo de refatoração se deve a uma nova mudança de nível: desta ve
 \end{enumerate}
 
 
-\section{Uma linguagem universal para especificação de software}
+\section*{Uma linguagem universal para especificação de software}
 
 Em muitos projetos de software, a terminologia e, principalmente, os conceitos utilizados diferem bastante entre os utilizados pelos clientes em seu dia-a-dia, os utilizados pelos desenvolvedores em suas conversas internas e aqueles efetivamente implementados em software. Por vezes, mesmo dentro do software há este tipo de diferenciação, por exemplo, entre a camada de lógica de negócios e a estrutura de persistência subjacente. Estas diferenças e as constantes traduções necessárias para passar de um contexto a outro geram um considerável \textit{overhead} e são um foco de confusão e de introdução de defeitos no software.
 
@@ -71,7 +79,7 @@ Além da terminologia citada, a palavra ``deve'' (\textit{should} no original) t
 
 A adoção da nomenclatura de especificações em lugar de testes foi o início da mudança que levou a especificação ao cliente, sendo uma das molas-mestras para a evolução de BDD a partir de TDD, conforme se verá na Seção \ref{HerancaTDD}.
 
-\section{A Herança de TDD}
+\section*{A Herança de TDD}
 \label{HerancaTDD}
 
 BDD tem suas raízes em uma técnica conhecida como Test-Driven Development \cite{TDDByExample}, que, em sua conceituação inicial, equivalia basicamente aos passos 3 a 5 do ciclo BDD apresentado no item 1.1, ou seja, um ciclo de escrever um teste, implementar o mínimo de código necessário para passar no teste e, ao fim, refatorar. Posteriormente, foi desenvolvida sobre TDD a técnica de Acceptance TDD (ATDD), que constituía, basicamente, o ciclo BDD. De fato, os ciclos ATDD em \citeonline{TestDrivenKoskela} e o ciclo BDD em \citeonline{RSpecBook} são conceitualmente os mesmos.
@@ -84,16 +92,16 @@ Do mesmo modo, a literatura técnica sobre TDD e ATDD é virtualmente de complet
 
 Com relação a estudos sobre os impactos de TDD no desenvolvimento de software, \citeonline{SoftwareArchitectureTDD} conclui que TDD leva a melhoras significativas em métricas como complexidade computacional, acoplamento, volume de testes e cobertura de testes. Posteriormente, \citeonline{TDDDesignJanzen} concluíram que TDD leva um \textit{design} mais orientado a objetos, porém requer profissionais com alto nível de habilidade técnica para obter um \textit{design} com baixo acoplamento. \citeonline{TDDDefectReduction}, em um estudo de caso na indústria, relatam que a aplicação de TDD leva a reduções na densidade de defeitos, com impacto mínimo na produtividade. Contudo, um experimento conduzido por \citeonline{EffectivenessTestFirst} constatou um aumento de produtividade com o uso de TDD, o que foi atribuído a um melhor entendimento das tarefas a serem realizadas, o foco em pequenas partes de funcionalidades de cada vez, a criação de um ambiente de \textit{feedback} constante e aprendizagem e pouco esforço de retrabalho. Os resultados obtidos por \citeonline{TDDDesignJanzen} indicam uma correlação positiva entre TDD e produtividade. Este trabalho também concluiu que os programadores vêem TDD mais positivamente após alguma experiência prática. \citeonline{ArtOfFearlessProgramming} fazem um apanhado de trabalhos sobre TDD e chegam a resultados controversos, relatando, porém, que a maioria dos pesquisadores concorda que TDD leva a um melhor foco nas tarefas sendo realizadas e a aumentos na taxa de cobertura de testes.
 
-\section{Tópicos adicionais}
+\section*{Tópicos adicionais}
 
-\subsection{Definição de terminado}
+\subsection*{Definição de terminado}
 
 Uma das dificuldades mais sutis no desenvolvimento de software é descobrir quando uma funcionalidade está terminada. Na engenharia de software tradicional, com o uso de especificações não executáveis, o término de uma funcionalidade se dá quando o desenvolvedor acredita que o estágio atual da implementação atende às especificações, não havendo uma forma direta e objetiva de verificar isto, o que acaba sendo deixado para ser feito na ``fase'' de testes. Em alguns casos, não há nem mesmo uma especificação que lhe forneça esta informação, tornando esta decisão ainda mais subjetiva.
 
 Quando se cria uma especificação BDD para uma funcionalidade, se tem, automaticamente, uma definição de terminado. Uma funcionalidade está pronta quando passa na especificação, em uma avaliação puramente objetiva, posto que automática. Em BDD, uma especificação do usuário contém intrinsecamente o critério de aceitação da funcionalidade em seus passos Então.
 
 
-\subsection{Verificação de regressão}
+\subsection*{Verificação de regressão}
 A engenharia de software tradicionalmente trata a regressão como um problema sem solução ótima. Quando uma nova funcionalidade é adicionada a um software ou este sofre uma manutenção de qualquer tipo, sempre há a possibilidade de que a alteração inadvertidamente inclua falhas no software. Se a implementação dos testes é manual, é na maioria dos casos inviável testar novamente todo o software. O recomendável, nestes casos, é manter um documento com informações de rastreabilidade, de modo a saber que módulos do software são atingidos por uma alteração \cite{EngSoftPressman} \cite{EngSoftSommerville}. Apesar de diminuir bastante a ocorrência de problemas, a criação e manutenção de tais artefatos é complexa e propensa a erros.
 
 Com o uso de técnicas de verificação e validação automatizadas como BDD, é possível simplesmente executar as especificações para todo o software antes de enviar cada alteração ao controle de versões. Caso o tempo dos testes fique alto demais, pode-se particionar por módulo, rodando-se todas as especificações de unidade mas apenas as especificações do usuário relativas ao módulo, uma vez que especificações do usuário, por simular o uso real do software, consomem muito mais tempo para executar. Uma alternativa é tentar otimizar a implementação das especificações de usuário, utilizando, por exemplo, em casos de aplicações web, simuladores de navegador como Webrat\footnote{http://wiki.github.com/brynary/webrat, acesso em 02/03/2010} ou zope.testbrowser\footnote{http://pypi.python.org/pypi/zope.testbrowser, acesso em 02/03/2010} em lugar de ferramentas que usam navegadores reais como Selenium\footnote{http://selenium-rc.seleniumhq.org, acesso em 02/03/2010} ou Watir\footnote{http://watir.com, acesso em 05/03/2010}.
