@@ -1,0 +1,5 @@
+pdflatex agile-estimating-and-planning.tex
+pdflatex agile-estimating-and-planning.tex
+pdflatex agile-estimating-and-planning.tex
+evince agile-estimating-and-planning.pdf
+
