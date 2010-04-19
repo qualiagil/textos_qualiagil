@@ -656,6 +656,155 @@ Há alguns casos que devido a problemas de saúde, nem todos podem ficar de pé.
 
 
 
+\chapter{Entendendo o que Fazer}
+Se uma equipe quer criar software de valor, é preciso entender os benefícios que serão gerados para o usuário e para o negócio, e user stories ajudam nisso. User stories são a base de todo o trabalho que uma equipe ágil faz -- elas são as bases dos planejamentos, desenvolvimentos e testes.
+
+É comum achar equipes que tiveram problemas quando começaram a usar user stories, porque trataram as user stories como se fossem documentos de requisitos, que todos aceitam sem perguntar nada. O ponto central das user stories é a idéia de que elas são ``convites à conversa''; é preciso fazer perguntas a si mesmo para se ter um melhor entendimento do que os usuários precisam e em como dividir os requisitos.
+
+Esse capítulo mostrará como apresentar user stories para a equipe e como evitar algumas armadilhas.
+
+
+\section{Ciclo de Vida de uma User Story}
+Vamos ver o ciclo de vida de uma user story comparando com o ciclo de vida de uma borboleta.
+
+Uma user story começa com uma idéia, como um ovo. A idéia choca uma conversa, a qual cresce e ganha forma, como uma lagarta. A conversa se transforma em casos de teste, como um casulo. Esses casos de teste contém o que o software precisa fazer, e o software toma forma, cercado pelos testes da user story. Por fim, software que funciona emerge, como uma bela borboleta. O ciclo termina depois que o software trouxer feedback do usuário e novas idéias. Na maioria das vezes, uma equipe ágil tem user stories em cada estágio diferente deste ciclo de vida.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm]{user_story_life_cycle}
+  \caption{Ciclo de vida de uma user story}
+\end{figure}
+
+Ron Jeffries resume os aspectos críticos de uma user story como 3Cs:\\
+\textbf{Cartão}: Escreva histórias nos cartões para facilitar conversas em grupos\\
+\textbf{Conversa}: Faça perguntas e sugira maneiras de dividir a história\\
+\textbf{Confirmação}: Chegue num acordo de como serão os testes que validarão se a história está completa\\
+
+
+\section{Encorajando Conversas}
+São as conversas sobre user stories que fazem com que a equipe entenda o que precisa ser feito. As conversas precisam ser guiadas pelos desenvolvedores e testadores, assegurando junto ao cliente que eles entenderam os detalhes do que precisa ser feito. Repare se a equipe está tendo problemas, e lembre-os que eles devem sempre perguntar ao cliente ao invés de chutar.
+
+Outras conversas serão sobre as user stories futuras. Tais conversas são iniciadas pelo cliente, que não possui conhecimento técnico e precisa de uma visão do que pode ser feito no futuro.
+
+As conversas sobre user stories não são levantadas até a reunião de planejamento. Sugira que novas user stories sejam definidas em grupos pequenos, com um cliente e alguns desenvolvedores ou testadores. Revise-as com a equipe inteira depois.
+
+
+\section{Trabalhando com Cartões}
+Algumas equipes fazem planejamento com um projetor sendo usado pra coletar novas user stories da equipe. Essa maneira não é tão eficiente. Uma maneira melhor de coletar user stories é usando cartões ou \textit{sticky-notes ou post-its}. É muito mais fácil agrupar user stories em cartões e movê-los pela mesa do que mover linhas e colunas numa planilha de textos.
+
+Comece mostrando à equipe como usar os cartões. Escreva cada user story que você ouvir num cartão, e em seguida coloque-o na mesa, onde todas as pessoas possam ler. Agora todos podem contribuir com uma user story num cartão novo.
+
+Verifique se o que você escreveu bate com o que foi dito. Caso não bata, sugira ao cliente corrigir ou reescrever o cartão. Se a história mudar, adicione notas no cartão, ou jogue-o fora e comece outro.
+
+Não escreva todas as user stories nos cartões. Faça com que seja natural alguém sugerir uma user story e escrevê-la num cartão. Deixe cartões disponíveis no ambiente de trabalho da equipe, para que possam ser usados a qualquer momento.
+
+Lembre-os que os cartões irão parar no quadro de tarefas e a equipe se referirá aos cartões nas daily standups. Comece com um título legível, grande e breve, no topo -- evite usar identificadores numéricos nos cartões, pois estes dificultam as conversas. É recomendável colocar estimativas no canto inferior direito em cada cartão.
+
+\subsection{Modelo de User Story}
+Para equipes que estão começando, recomenda-se usar o seguinte modelo:
+``\textit{Como um}... usuário, \textit{Eu quero}... capacidade, \textit{Para que}... benefício''
+
+Um exemplo: \textit{Como um} comprador de livros, \textit{Eu quero} ver as revisões dos compradores de um livro, \textit{Para que} eu possa decidir qual comprar.
+
+Tal modelo ajuda a relembrar e esclarecer quem o usuário é, e qual será o benefício da história em desenvolvimento.
+
+Essa forma de escrever user stories nem sempre é viável -- normalmente quando não há interação com usuário é difícil de expressar as intenções com este modelo.
+
+Lembre que o propósito deste modelo de user story é ajudar a equipe a aprender a fazer perguntas que melhorem o entendimento, ao invés de preencher papéis. Uma vez que a equipe acostumar-se com user stories, descarte o modelo. Mas nunca se esqueça que o texto nos cartões devem ser entendidos por todos, sempre.
+
+Algumas equipes preferem guardar os cartões, mesmo quando as user stories já foram implementadas e o software está funcionando, para caso precisem relembrar das histórias originais no futuro. Outras equipes jogam fora os cartões depois que a user story foi implementada.
+
+
+
+\section{Confirmando os Detalhes}
+Uma vez que a equipe entende a história, quem o usuário é, e qual problema está para ser resolvido, ela só precisa de uma maneira de discutir os detalhes do comportamento a ser implementado. Trabalhe com a equipe para criar um cojunto de testes que validam quando a user story está ``pronta''. Os testes da história\footnote{referidos por vezes como critérios de aceitação ou cenários} ajudam a equipe a esclarecer o que precisa ser feito e quanto precisa ser testado.
+
+Os testes da história começam como pontos escritos no verso do cartão da história. Aconselhe a equipe que tais pontos são suficientes até que a história seja incluída numa iteração. Depois, esses pontos serão usados na iteração como base para criar scripts de teste.
+
+Algumas equipes esperam que os clientes escrevam os cartões com os casos de testes em mente, mas infelizmente não é o que acontece na maioria dos casos.
+
+Um problema está na palavra \textit{teste}. Quando ela é usada o cliente pode dar alguma desculpa pra não se envolver muito, pois o efeito que a palavra \textit{teste} tem é de parecer que se trata de algo muito técnico. Evite usar a palavra \textit{teste} com os clientes. Ao invés de pedi-los um caso de teste, peça exemplos reais de uso. Exemplos reais além de ajudarem o cliente a pensar no comportamento do software, ajudam a equipe a pensar em situações em que há necessida de manipular erros.
+
+Comece através de uma interação de usuário simples onde um usuário alcança seu objetivo. Agora faça com que a equipe faça as seguintes perguntas ao cliente:
+
+\begin{itemize}
+\item Com que dados o usuário entra?
+\item O que o usuário deve ver?
+\item Há alguma regra de negócio com a qual precisamos nos preocupar?
+\end{itemize}
+
+Rascunhar a interface de usuário pode ajudar; desenhos simples são o suficiente. O interesse no momento são o conteúdo e as interações com o usuário, não na aparência.
+
+Agora pergunte a equipe o que pode dar errado. Qual entrada de dados precisa ser tratada? Considere usar dados errados e quantidades reais. Lembre a equipe que nesse momento não é necessário trabalhar em cada condição de erro, não se trata ainda dos scripts de teste -- essa fase é exploratória.
+
+Dan North propôs um modelo para testes de história (\textit{story test ou cenários}), que baseia-se na idéia de as pré-condições serem descritas num passo iniciado por \textit{Dado que}; as ações ficam expressas num \textit{Quando}; e o resultado da ação expresso em um \textit{Então}.\\
+Por exemplo:\\
+\textbf{Dado que} o usuário está visualizando a página de buscas e entra com ``Agile Coaching''\\
+\textbf{Quando} o usuário clica no botão Buscar\\
+\textbf{Então} são mostrado os detalhes completos do livro (título, autor, imagem do livro, sinopsis, preço, revisões) e um botão Adicionar ao Carrinho de Compras.
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{user_story}
+  \caption{Exemplo de uma User Story}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm]{story_test}
+  \caption{Exemplo de um teste da história (\textit{story test})}
+\end{figure}
+
+
+User stories são uma técnica simples que a equipe pode usar para entender melhor as intenções do cliente através de conversas sobre o que os usuários precisam. Como coach, seu foco é livrar a equipe dos mals hábitos criados na época pré-Agile. Hábitos como aceitar implementar requisitos ao pé da letra ao invés de discutir, perguntar por quês e oferecer alternativas. Ensine-os a usar os cartões, e encoraje-os a se envolver em conversas sobre user stories para oferecerem idéias e colocarem mais detalhes nos story tests.
+
+
+
+\section{Impedimentos}
+
+\subsection{Funcionalidade Que Não Aparece Para O Usuário}
+User stories são mais eficazes quando há uma interação real do software com um usuário. Quando trata-se de user stories técnicas nem sempre há uma funcionalidade óbvia pra ser descrita\footnote{Nota do autor: veja como lidar com user stories técnicas em http://lizkeogh.com/2008/09/10/feature-injection-and-handling-technical-stories/}.
+
+
+O modelo \textit{Como um...Eu quero...Para que...} não será tão útil. Mas as perguntas ``Quem quer isso? Por quê?'' ainda são relevantes para entender melhor como priorizar o trabalho. A equipe ainda deve conversar sobre o que está sendo resolvido, o benefício entregue e os testes da história que confirmarão quando a tarefa está pronta.
+
+User stories também podem ser usadas pra agrupar tarefas técnicas que sozinhas não parecem trazer tanto benefício pro cliente -- juntas podem fazer mais sentido e usarão uma descriçao não técnica.
+
+
+\subsection{Requisitos Têm Que Ser Documentados}
+Algumas empresas precisam documentar requisitos formalmente, em alguns casos porque estão numa indústria regularizada e precisam usar um processo que pode ser auditado.
+
+Você ainda pode usar user stories, mas agora será necessário documentá-las. Uma maneira rápida é criar um registro eletrônico das user stories tirando fotos ou fazendo fotocópias. Pode ser interessante fotografar os rabiscos gerados no quadro branco durante a discussão sobre a user story. Caso seja necessário uma documentação mais completa, ela pode ser escrita após a discussão sobre a user story.
+
+Uma forma mais moderna de documentar os requisitos é automatizando-os. Os requisitos são escritos de forma executável. Ferramentas como Fit\footnote{fit.c2.com}, Cucumber\footnote{Nota do autor: http://cukes.info}, FitNesse\footnote{Nota do autor: fitnesse}, JBehave\footnote{Nota do autor: http://jbehave.org}.
+
+\subsection{A Equipe Não Pode Estar Reunida}
+Obviamente a técnica dos cartões não funciona quando a equipe está situada em diferentes localidades. User stories ainda podem servir como base de tudo nas conversas sobre as necessidades dos usuários, story tests e etc. Porém, ao invés de usar cartões (papel), você pode usar um software de área de trabalho compartilhada (\textit{Desktop sharing software}), como NetMeeting ou WebEx, para que as pessoas vejam a mesma tela. Opte por usar um software que permita escrever sticky notes virtuais.
+
+
+
+\section{Checklist}
+
+\begin{itemize}
+\item Ensine a equipe o mantra ``Cartão, Conversa, Confirmação'' para ajudá-los a lembrar dos três elementos essenciais de uma user story. Encoraje a equipe a refinar cada user story através de conversas com o cliente.
+
+\item Mostre à equipe como escrever histórias nos cartões escrevendo alguns.. Depois deixe que a equipe escreva os cartões sozinha.
+
+\item Garanta que cartões ou notas estejam disponíveis no espaço de trabalho da equipe e nas reunião que discutirão histórias.
+
+\item ``Como um... usuário Eu quero... capacidade Para que... benefício'' pode ser um modelo útil para escrever user stories. Faça com que isso não seja uma maneira de preencher papel; tais modelos devem obrigar a equipe a fazer perguntas pra si mesma. Uma vez que a equipe fizer as perguntas certas, poderá descartar o modelo.
+
+\item Ajude o cliente a trabalhar nos detalhes das histórias antes das sessões de planejamento. Uma maneira de começar a dar forma às user stories é envolvendo poucos membros da equipe antes da sessão; eles podem fazer pergutas e sugerir story tests.
+
+\end{itemize}
+
+
+
+
+
+
+
 
 \end{document}
 
